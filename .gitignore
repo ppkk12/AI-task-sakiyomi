@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# env（APIキーは絶対にコミットしない）
+.env*
+!.env.example
+
+# misc
+.DS_Store
+npm-debug.log*
+.vercel
+
+# local tooling / notes
+.claude/
+claude_code_prompt.md

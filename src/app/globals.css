@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-accent: #c2410c;
+  --color-accent-soft: #fff1e6;
+  --font-sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Meiryo", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", "Consolas", monospace;
+}
+
+:root {
+  color-scheme: light;
+}
+.dark {
+  color-scheme: dark;
+  --color-accent: #fb923c;
+  --color-accent-soft: #2a1a10;
+}
+
+body {
+  @apply bg-stone-100 text-stone-900 antialiased dark:bg-stone-950 dark:text-stone-100;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: white;
+}
+
+@utility panel {
+  @apply rounded-md border border-stone-300 bg-white dark:border-stone-800 dark:bg-stone-900;
+}
+@utility num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded px-3.5 py-2 text-sm transition-colors disabled:opacity-40;
+}
+@utility btn-primary {
+  @apply btn bg-stone-900 font-semibold text-stone-50 hover:bg-stone-700 dark:bg-stone-100 dark:text-stone-900 dark:hover:bg-stone-300;
+}
+@utility btn-ghost {
+  @apply btn border border-stone-300 hover:bg-stone-200/60 dark:border-stone-700 dark:hover:bg-stone-800;
+}
+@utility chip {
+  @apply rounded border border-stone-300 px-2.5 py-1 text-xs text-stone-700 transition-colors hover:border-stone-500 dark:border-stone-700 dark:text-stone-300 dark:hover:border-stone-500;
+}
+@utility chip-on {
+  @apply border-stone-900 bg-stone-900 text-stone-50 hover:border-stone-900 dark:border-stone-100 dark:bg-stone-100 dark:text-stone-900;
+}
+@utility field {
+  @apply w-full rounded border border-stone-300 bg-white px-3 py-2 text-sm outline-none focus:border-stone-900 dark:border-stone-700 dark:bg-stone-950 dark:focus:border-stone-300;
+}
+@utility label {
+  @apply mb-1.5 block text-xs text-stone-500 dark:text-stone-400;
+}
+@utility eyebrow {
+  @apply text-[11px] font-semibold tracking-wider text-stone-500 uppercase dark:text-stone-400;
+}
