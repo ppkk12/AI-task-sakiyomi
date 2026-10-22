@@ -2,7 +2,7 @@
 
 作者：[@pk6fsfsl](https://x.com/pk6fsfsl)
 
-**公開ページ：https://ppkk12.github.io/ai-task-sakiyomi/**
+**公開ページ：https://ppkk12.github.io/AI-task-sakiyomi/**
 
 AIに渡す予定のプロンプト（作業指示）を入力すると、、
 ↓
