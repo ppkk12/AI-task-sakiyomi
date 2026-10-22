@@ -1,0 +1,3 @@
+:HL["/AI-task-sakiyomi/_next/static/chunks/3gz77og5vtnjg.css","style"]
+1:[["children",{"s":"__PAGE__","h":160}]]
+0:{"b":"87DKCQwS7i9y4-fTa95Zy","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
