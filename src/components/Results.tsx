@@ -124,19 +124,17 @@ function PredictionCard({ result }: { result: EngineResult }) {
         <Info k="出力" v={fmtTokens(p.tokens.output)} />
         <Info k="思考（Medium）" v={fmtTokens(p.tokens.thinking)} />
       </dl>
-      <table className="mt-5 w-full text-sm">
-        <tbody>
-          {LEVELS.map((lv) => (
-            <tr key={lv} className="border-t border-stone-200 dark:border-stone-800">
-              <td className="w-20 py-2 font-medium">{LEVEL_LABEL[lv]}</td>
-              <td className="num w-36 py-2 text-xs text-stone-500">
-                やり直し率 {Math.round(p.levels[lv].retryRate * 100)}% ・ {p.levels[lv].expectedAttempts.toFixed(1)}回
-              </td>
-              <td className="py-2 text-xs text-stone-600 dark:text-stone-400">{p.levels[lv].note}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="mt-5 text-sm">
+        {LEVELS.map((lv) => (
+          <div key={lv} className="grid gap-x-4 gap-y-0.5 border-t border-stone-200 py-2.5 sm:grid-cols-[5rem_11rem_1fr] dark:border-stone-800">
+            <span className="font-medium">{LEVEL_LABEL[lv]}</span>
+            <span className="text-xs whitespace-nowrap text-stone-500 sm:pt-0.5">
+              やり直し率 <span className="num">{Math.round(p.levels[lv].retryRate * 100)}%</span> ・ 平均 <span className="num">{p.levels[lv].expectedAttempts.toFixed(1)}</span>回
+            </span>
+            <span className="text-xs text-stone-600 sm:pt-0.5 dark:text-stone-400">{p.levels[lv].note}</span>
+          </div>
+        ))}
+      </div>
       {p.risks.length > 0 && (
         <ul className="mt-3 space-y-1 text-xs text-stone-500">
           {p.risks.map((r) => <li key={r}>— {r}</li>)}
