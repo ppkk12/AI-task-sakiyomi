@@ -2,6 +2,8 @@
 
 作った人：[@pk6fsfsl](https://x.com/pk6fsfsl)
 
+**公開ページ：https://ppkk12.github.io/ai-task-sakiyomi/**
+
 AIに渡す予定のプロンプト（作業指示）を入力すると、
 
 - どのAI・モデル・推論レベル（Low / Medium / High）が最適か
@@ -47,13 +49,11 @@ http://localhost:3000 を開きます。キー不要でそのまま試せます�
 ## 公開
 
 - **Vercel**：リポジトリをインポートするだけ。必要なら環境変数にキーを設定。
-- **GitHub Pages**：静的書き出し版をビルドします（サーバーAPIは含まれないため、キーはブラウザの設定画面で入力）。
+- **GitHub Pages**：静的書き出し版を `gh-pages` ブランチに公開します（サーバーAPIは含まれないため、キーはブラウザの設定画面で入力）。
 
   ```bash
-  NEXT_PUBLIC_BASE_PATH=/<リポジトリ名> npm run build:static
+  npm run deploy
   ```
-
-  `out/` を GitHub Pages に公開します。
 
 ## 技術スタック
 
